@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: predictra-ai-backend
+    runtime: docker
+    rootDir: backend
+    plan: free
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        value: sqlite:///./predictra.db
+      - key: FRONTEND_ORIGIN
+        value: https://predictra-ai.vercel.app

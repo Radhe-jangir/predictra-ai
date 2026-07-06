@@ -9,18 +9,28 @@ export function Card({
   animate = false,
   ...props
 }: HTMLAttributes<HTMLDivElement> & { glass?: boolean; animate?: boolean }) {
-  const Comp = animate ? motion.div : "div";
-  const motionProps = animate
-    ? { variants: fadeUpSm, initial: "hidden", whileInView: "show", viewport: { once: true, margin: "-60px" } }
-    : {};
+  const cardClassName = cn(
+    "rounded-xl border border-border bg-background/86 p-5 shadow-sm transition-shadow hover:shadow-md",
+    glass && "glass",
+    className,
+  );
+
+  if (animate) {
+    return (
+      <motion.div
+        variants={fadeUpSm}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-60px" }}
+        className={cardClassName}
+        {...(props as any)}
+      />
+    );
+  }
+
   return (
-    <Comp
-      className={cn(
-        "rounded-xl border border-border bg-background/86 p-5 shadow-sm transition-shadow hover:shadow-md",
-        glass && "glass",
-        className,
-      )}
-      {...(motionProps as Record<string, unknown>)}
+    <div
+      className={cardClassName}
       {...props}
     />
   );

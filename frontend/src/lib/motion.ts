@@ -5,7 +5,7 @@ import type { Variants, Transition } from "framer-motion";
  * Tuned for a calm, "premium SaaS" feel: short durations, soft easing.
  */
 
-export const easeOut: Transition["ease"] = [0.22, 1, 0.36, 1];
+export const easeOut = [0.22, 1, 0.36, 1];
 
 /** Fade + rise. Use on hero blocks and section headers. */
 export const fadeUp: Variants = {

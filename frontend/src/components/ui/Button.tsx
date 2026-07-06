@@ -26,7 +26,7 @@ export const Button = forwardRef<
         "bg-gradient-to-r from-rose-600 to-rose-500 text-white hover:brightness-110",
       className,
     )}
-    {...props}
+    {...(props as any)}
   />
 ));
 Button.displayName = "Button";

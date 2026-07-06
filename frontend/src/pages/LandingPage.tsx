@@ -17,7 +17,7 @@ import { AnimatedNumber } from "../components/ui/AnimatedNumber";
 import { GlowCard } from "../components/ui/GlowCard";
 import { ParticleField } from "../components/ui/ParticleField";
 import { TypeWriter } from "../components/ui/TypeWriter";
-import { fadeUp, stagger, fadeUpSm, scaleIn } from "../lib/motion";
+import { fadeUp, stagger, fadeUpSm, scaleIn, expandCollapse } from "../lib/motion";
 
 function InteractiveSaaSPreview() {
   const [chatStep, setChatStep] = useState(0); // 0: idle, 1: typing query, 2: thinking, 3: typing response
